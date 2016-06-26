@@ -126,7 +126,8 @@ AC_MSG_CHECKING(for Cygwin)
 case $host in
 	*cygwin*)
 		OS_CYGWIN=yes
-		CXXFLAGS="$CXXFLAGS -U__STRICT_ANSI__"
+		AC_USE_SYSTEM_EXTENSIONS
+		LDFLAGS="$LDFLAGS -no-undefined"
 		;;
 	*)
 		OS_CYGWIN=no
